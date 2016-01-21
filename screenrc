@@ -1,0 +1,10 @@
+
+# dat history
+scrollback 1000
+
+# give a two-line status, with the current window highlighted
+hardstatus alwayslastline
+hardstatus string '%{= kG}[%{G}%H%? %1`%?%{g}][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][%{B}%m/%d %{W}%C%A%{g}]'
+
+# treat every screen as a login shell
+shell -$SHELL
