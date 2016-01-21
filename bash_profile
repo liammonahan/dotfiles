@@ -10,6 +10,7 @@ PS1='\[\e[0;32m\]$NEW_HOSTNAME\[\e[m\]\[\e[1;32m\]:\[\e[m\]\[\e[1;34m\]$CurDir\[
 
 # sourcing
 test -f ~/.bashrc && . ~/.bashrc
+test -f ~/.git-completion.bash && . ~/.git-completion.bash
 test -f ~/.umobjstorerc && . ~/.umobjstorerc
 test -f ~/env/bin/activate && . ~/env/bin/activate
 test -f ~/.bash_aliases && . ~/.bash_aliases
