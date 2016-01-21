@@ -1,6 +1,4 @@
 
-echo "Howdy from bashrc"
-
 # set exported variables
 export EDITOR=vim
 PATH=/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH
