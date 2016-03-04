@@ -15,7 +15,7 @@ alias d3proj="$HOME/bin/d3_project_skeleton.sh"
 alias list_git_statuses='for dir in *; do echo =======$dir======= && git --git-dir=$dir/.git --work-tree=$dir status ; done ;'
 
 # color ls output
-alias ls='ls -G'
+alias ls='ls --color'
 
 # nota bene
 # Arguments:
