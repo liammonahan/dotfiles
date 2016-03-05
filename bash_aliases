@@ -1,13 +1,14 @@
 # .bash_aliases
 # Created by: Liam Monahan
 
+PLATFORM=`uname -s`
+
 # meta
 alias ealias='vim ~/.bash_aliases && . ~/.bash_aliases'
 
 # general aliases
 alias ..='cd ..'
 alias couldbedoing='$EDITOR $HOME/Documents/things-you-could-be-doing.txt'
-
 alias d3proj="$HOME/bin/d3_project_skeleton.sh"
 
 # I use this for when I want to see the status of all my git projects kept
@@ -15,7 +16,11 @@ alias d3proj="$HOME/bin/d3_project_skeleton.sh"
 alias list_git_statuses='for dir in *; do echo =======$dir======= && git --git-dir=$dir/.git --work-tree=$dir status ; done ;'
 
 # color ls output
-alias ls='ls --color'
+if [ $PLATFORM == 'Darwin' ]; then
+    alias ls='ls -G'
+else
+    alias ls='ls --color'
+fi
 
 # nota bene
 # Arguments:
