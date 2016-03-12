@@ -73,3 +73,12 @@ alias todo='~/usr/bin/todo -d ~/usr/etc/todo/todo.cfg'
 alias t='todo'
 complete -F _todo todo
 complete -F _todo t
+
+
+# quick and dirty linking service
+function linkme() {
+  FILE=$1
+  MD5=`md5 -q $FILE`
+  scp $FILE root@link.monahan.io:/var/www/html/l/$MD5
+  echo http://link.monahan.io/l/$MD5
+}
