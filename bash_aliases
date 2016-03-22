@@ -78,7 +78,12 @@ complete -F _todo t
 # quick and dirty linking service
 function linkme() {
   FILE=$1
-  MD5=`md5 -q $FILE`
+  [ -z "$FILE" ] && echo please specify a file && exit 1
+  if [ $PLATFORM == 'Darwin' ]; then
+    MD5=`md5 -q $FILE`
+  else
+    MD5=`md5sum $FILE | awk '{print $1}'`
+  fi
   scp $FILE root@link.monahan.io:/var/www/html/l/$MD5
   echo http://link.monahan.io/l/$MD5
 }
