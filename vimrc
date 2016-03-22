@@ -83,3 +83,5 @@ endfunction
 
 " set the textwidth to 79
 set tw=79
+
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
