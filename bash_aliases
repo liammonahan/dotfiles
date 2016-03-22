@@ -9,7 +9,7 @@ alias ealias='vim ~/.bash_aliases && . ~/.bash_aliases'
 # general aliases
 alias ..='cd ..'
 alias couldbedoing='$EDITOR $HOME/Documents/things-you-could-be-doing.txt'
-alias d3proj="$HOME/bin/d3_project_skeleton.sh"
+alias d3proj="$HOME/usr/bin/d3_project_skeleton.sh"
 
 # I use this for when I want to see the status of all my git projects kept
 # together in a single directory without cd-ing into each one..
