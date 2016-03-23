@@ -84,6 +84,6 @@ function linkme() {
   else
     MD5=`md5sum $FILE | awk '{print $1}'`
   fi
-  scp $FILE root@link.monahan.io:/var/www/html/l/$MD5
+  scp $FILE root@link.monahan.io:/var/www/html/l/$MD5 > /dev/null
   echo http://link.monahan.io/l/$MD5
 }
