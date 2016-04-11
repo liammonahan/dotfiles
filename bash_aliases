@@ -27,13 +27,22 @@ fi
 #   $1 - class
 #   $2 - date (optional)
 function nb {
-  DATETIME=$(DATE "+%Y-%m-%d")
+  DATETIME=$(date "+%Y-%m-%d")
 
   # check that a class was passed in
-  if [ ! -z $1 ]; then
+  if [ -z $1 ]; then
     echo "must give class:"
-    ls ~/school | grep -e ^.*[0-9][0-9][0-9]$
-    return -1;
+    ls ~/school | grep -e '[0-9][0-9][0-9]'
+    return 1
+  else
+    CLASS="$1"
+  fi
+
+  # check that the class is valid
+  if [ ! -d ~/school/$CLASS ]; then
+    2>1 echo "Class does not exist: $CLASS"
+    ls ~/school | grep -e '[0-9][0-9][0-9]'
+    return 1
   fi
 
   # check if a date was passed in 
@@ -41,17 +50,17 @@ function nb {
     DATETIME=$2
   fi
 
-  if [ -d ~/school/$1/$DATETIME ]; then
+  if [ -d ~/school/$CLASS/$DATETIME ]; then
     echo "retrieving notes for $DATETIME"
-    if [ -f ~/school/$1/$DATETIME/$DATETIME.txt ]; then       
-      mvim ~/school/$1/$DATETIME/$DATETIME.txt
+    if [ -f ~/school/$CLASS/$DATETIME/$DATETIME.txt ]; then 
+      mvim ~/school/$CLASS/$DATETIME/$DATETIME.txt
     else
       2>1 echo "filestructure is irregular"
     fi
   else
     echo "creating notes for $DATETIME"
-    mkdir ~/school/$1/$DATETIME
-    cp ~/school/$1/template.txt ~/school/$1/$DATETIME/$DATETIME.txt && mvim ~/school/$1/$DATETIME/$DATETIME.txt
+    mkdir ~/school/$CLASS/$DATETIME
+    cp ~/school/$CLASS/template.txt ~/school/$CLASS/$DATETIME/$DATETIME.txt && mvim ~/school/$CLASS/$DATETIME/$DATETIME.txt
   fi
 }
 
