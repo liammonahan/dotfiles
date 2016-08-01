@@ -13,7 +13,7 @@ alias d3proj="$HOME/usr/bin/d3_project_skeleton.sh"
 
 # I use this for when I want to see the status of all my git projects kept
 # together in a single directory without cd-ing into each one..
-alias list_git_statuses='for dir in *; do echo =======$dir======= && git --git-dir=$dir/.git --work-tree=$dir status ; done ;'
+alias list_git_statuses='for dir in *; do [[ ! -d "$dir/.git" ]] && continue; echo && echo =======$dir======= && git --git-dir=$dir/.git --work-tree=$dir status && echo =============================================; done ;'
 
 # color ls output
 if [ $PLATFORM == 'Darwin' ]; then
