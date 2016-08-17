@@ -1,6 +1,6 @@
 
 " Modified by: Liam Monahan
-" Last modified: 2014 Jun 27
+" Last modified: 2016 Aug 17
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -85,3 +85,7 @@ endfunction
 set tw=79
 
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
+
+" Disable bell sound
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
