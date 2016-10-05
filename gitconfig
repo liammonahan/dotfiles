@@ -1,0 +1,13 @@
+[user]
+	email = liam@liammonahan.com
+	name = Liam Monahan
+[push]
+	default = simple
+[alias]
+	co = checkout
+	br = branch
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	ahead = log origin/master..HEAD --oneline
+	accept-ours = "!f() { git checkout --ours -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
+	accept-theirs = "!f() { git checkout --theirs -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
