@@ -22,11 +22,21 @@ else
     alias ls='ls --color'
 fi
 
+# todo.txt aliases
+export TODOTXT_DEFAULT_ACTION=ls
+alias todo='~/usr/bin/todo -d ~/usr/etc/todo/todo.cfg'
+alias t='todo'
+complete -F _todo todo
+complete -F _todo t
+
+
+# functions
+
 # nota bene
 # Arguments:
 #   $1 - class
 #   $2 - date (optional)
-function nb {
+nb () {
   DATETIME=$(date "+%Y-%m-%d")
 
   # check that a class was passed in
@@ -64,28 +74,16 @@ function nb {
   fi
 }
 
-# functions
-
-define () 
-{ 
+define () { 
   curl -s dict://dict.org/d:$1 | egrep --color=auto -v "^(220|250|150|151|221)"
 }
 
-function cls {
+cls () {
   cd $(echo $*) && ls
 }
 
-
-# todo.txt aliases
-export TODOTXT_DEFAULT_ACTION=ls
-alias todo='~/usr/bin/todo -d ~/usr/etc/todo/todo.cfg'
-alias t='todo'
-complete -F _todo todo
-complete -F _todo t
-
-
 # quick and dirty linking service
-function linkme() {
+linkme () {
   FILE=$1
   [ -z "$FILE" ] && echo please specify a file && exit 1
   if [ $PLATFORM == 'Darwin' ]; then
@@ -95,4 +93,14 @@ function linkme() {
   fi
   scp $FILE root@link.monahan.io:/var/www/html/l/$MD5 > /dev/null
   echo http://link.monahan.io/l/$MD5
+}
+
+# sed find and replace
+# shamelessly taken from https://github.com/zackmdavis/dotfiles/
+replace () {
+    if [[ -z "$1" ]] || [[ -z "$2" ]]; then
+        echo "for non-disastrous results, this function needs two arguments"
+        return 2
+    fi
+    find . -type f -not -path "./.git/*" -print0 | xargs -0 sed -i "s/$1/$2/g"
 }
