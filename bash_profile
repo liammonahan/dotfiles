@@ -1,5 +1,5 @@
 
-echo "Howdy from bash_profile"
+echo "howdy from bash_profile"
 
 # set non-exported variables
 NEW_HOSTNAME=`hostname -s`
