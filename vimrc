@@ -89,3 +89,7 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
 " Disable bell sound
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
+
+" enhanced tab completion
+set wildmenu
+set wildmode=longest:list,full
