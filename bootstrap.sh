@@ -5,7 +5,7 @@
 
 DOTFILES_REPO_LOCATION="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ORIGINALS=$DOTFILES_REPO_LOCATION/originals
-FILES=( bash_profile bashrc bash_aliases vimrc screenrc )
+FILES=( bash_profile bashrc bash_aliases vimrc screenrc tmux.conf )
 
 mkdir -p $ORIGINALS
 
