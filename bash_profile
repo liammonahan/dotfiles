@@ -12,10 +12,10 @@ PS1='\[\e[0;32m\]$NEW_HOSTNAME\[\e[m\]\[\e[1;32m\]:\[\e[m\]\[\e[1;34m\]$CurDir\[
 test -f ~/.bashrc && . ~/.bashrc
 test -f ~/.git-completion.bash && . ~/.git-completion.bash
 test -f ~/.umobjstorerc && . ~/.umobjstorerc
-test -f ~/env/bin/activate && . ~/env/bin/activate
 test -f ~/.bash_aliases && . ~/.bash_aliases
 test -f ~/.bash_custom_prompt && . ~/.bash_custom_prompt
 test -f ~/.todo_completion && . ~/.todo_completion
+test -f ~/.exercism_completion && . ~/.exercism_completion
 
 
 _complete_hosts () {
