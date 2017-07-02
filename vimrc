@@ -61,9 +61,6 @@ command Diff vert new | set bt=nofile | r # | 0d_ | diffthis
 
 highlight Comment ctermfg=white
 
-" instead of spewing swp files everywhere, locate them all centrally
-set backupdir=~/.vim/tmp
-
 " tab shit...
 set tabstop=4
 set shiftwidth=4
