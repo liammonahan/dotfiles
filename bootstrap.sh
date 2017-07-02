@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # This script makes backup copies of any existing dotfiles into a folder called
-# "oiginals" and then symlinks all dotfiles to the copies held in this repo.
+# "originals" and then symlinks all dotfiles to the copies held in this repo.
 
 DOTFILES_REPO_LOCATION="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ORIGINALS=$DOTFILES_REPO_LOCATION/originals

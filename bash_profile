@@ -1,5 +1,5 @@
 
-echo "Howdy from bash_profile"
+echo "howdy from bash_profile"
 
 # set non-exported variables
 NEW_HOSTNAME=`hostname -s`
@@ -10,6 +10,7 @@ PS1='\[\e[0;32m\]$NEW_HOSTNAME\[\e[m\]\[\e[1;32m\]:\[\e[m\]\[\e[1;34m\]$CurDir\[
 
 # sourcing
 test -f ~/.bashrc && . ~/.bashrc
+test -f ~/.localrc && . ~/.localrc
 test -f ~/.git-completion.bash && . ~/.git-completion.bash
 test -f ~/.umobjstorerc && . ~/.umobjstorerc
 test -f ~/.bash_aliases && . ~/.bash_aliases

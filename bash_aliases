@@ -14,7 +14,7 @@ alias synctovm="rsync -a ~liam/Documents/ liam@vm.liammonahan.com:~liam/Document
 
 # I use this for when I want to see the status of all my git projects kept
 # together in a single directory without cd-ing into each one..
-alias list_git_statuses='for dir in *; do echo =======$dir======= && git --git-dir=$dir/.git --work-tree=$dir status ; done ;'
+alias list_git_statuses='for dir in *; do [[ ! -d "$dir/.git" ]] && continue; echo && echo =======$dir======= && git --git-dir=$dir/.git --work-tree=$dir status && echo =============================================; done ;'
 
 # color ls output
 if [ $PLATFORM == 'Darwin' ]; then
@@ -23,11 +23,21 @@ else
     alias ls='ls --color'
 fi
 
+# todo.txt aliases
+export TODOTXT_DEFAULT_ACTION=ls
+alias todo='~/usr/bin/todo -d ~/usr/etc/todo/todo.cfg'
+alias t='todo'
+complete -F _todo todo
+complete -F _todo t
+
+
+# functions
+
 # nota bene
 # Arguments:
 #   $1 - class
 #   $2 - date (optional)
-function nb {
+nb () {
   DATETIME=$(date "+%Y-%m-%d")
 
   # check that a class was passed in
@@ -65,28 +75,16 @@ function nb {
   fi
 }
 
-# functions
-
-define () 
-{ 
+define () { 
   curl -s dict://dict.org/d:$1 | egrep --color=auto -v "^(220|250|150|151|221)"
 }
 
-function cls {
+cls () {
   cd $(echo $*) && ls
 }
 
-
-# todo.txt aliases
-export TODOTXT_DEFAULT_ACTION=ls
-alias todo='~/usr/bin/todo -d ~/usr/etc/todo/todo.cfg'
-alias t='todo'
-complete -F _todo todo
-complete -F _todo t
-
-
 # quick and dirty linking service
-function linkme() {
+linkme () {
   FILE=$1
   [ -z "$FILE" ] && echo please specify a file && exit 1
   if [ $PLATFORM == 'Darwin' ]; then
@@ -95,5 +93,20 @@ function linkme() {
     MD5=`md5sum $FILE | awk '{print $1}'`
   fi
   scp $FILE root@link.monahan.io:/var/www/html/l/$MD5 > /dev/null
-  echo http://link.monahan.io/l/$MD5
+  LINK_URL=http://link.monahan.io/l/$MD5
+  if [ $PLATFORM == 'Darwin' ]; then
+    echo $LINK_URL | pbcopy
+    echo "    ~~~~ Link copied to clipboard ~~~    "
+  fi
+  echo $LINK_URL
+}
+
+# sed find and replace
+# shamelessly taken from https://github.com/zackmdavis/dotfiles/
+replace () {
+    if [[ -z "$1" ]] || [[ -z "$2" ]]; then
+        echo "for non-disastrous results, this function needs two arguments"
+        return 2
+    fi
+    find . -type f -not -path "./.git/*" -print0 | xargs -0 sed -i "s/$1/$2/g"
 }

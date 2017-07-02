@@ -1,6 +1,6 @@
 
 " Modified by: Liam Monahan
-" Last modified: 2014 Jun 27
+" Last modified: 2016 Aug 17
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -56,13 +56,10 @@ endif " has("autocmd")
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
-command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+command Diff vert new | set bt=nofile | r # | 0d_ | diffthis
 	 	\ | wincmd p | diffthis
 
 highlight Comment ctermfg=white
-
-" instead of spewing swp files everywhere, locate them all centrally
-set backupdir=~/.vim/tmp
 
 " tab shit...
 set tabstop=4
@@ -85,3 +82,11 @@ endfunction
 set tw=79
 
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
+
+" Disable bell sound
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
+
+" enhanced tab completion
+set wildmenu
+set wildmode=longest:list,full
