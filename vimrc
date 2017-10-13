@@ -93,3 +93,12 @@ autocmd GUIEnter * set visualbell t_vb=
 " enhanced tab completion
 set wildmenu
 set wildmode=longest:list,full
+
+" CTRL-N twice to toggle line numbers
+nmap <C-N><C-N> :set invnumber<CR>
+
+" wrap commit messages at 72 characters
+autocmd FileType gitcommit set tw=72
+
+" always start on the first line of a git commit message
+autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
