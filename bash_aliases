@@ -31,6 +31,9 @@ source ~/usr/completion.d/todo_completion
 complete -F _todo todo
 complete -F _todo t
 
+alias ff='find . -type f -name'
+alias fd='find . -type d -name'
+
 
 # functions
 
