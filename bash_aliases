@@ -27,7 +27,7 @@ fi
 export TODOTXT_DEFAULT_ACTION=ls
 alias todo='~/usr/bin/todo.sh -d ~/usr/etc/todo/todo.cfg'
 alias t='todo'
-source ~/usr/completion.d/todo_completion
+test -f ~/usr/completion.d/todo_completion && source ~/usr/completion.d/todo_completion
 complete -F _todo todo
 complete -F _todo t
 
