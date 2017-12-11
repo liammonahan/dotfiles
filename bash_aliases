@@ -8,9 +8,9 @@ alias ealias='vim ~/.bash_aliases && . ~/.bash_aliases'
 
 # general aliases
 alias ..='cd ..'
-alias couldbedoing='$EDITOR $HOME/Documents/things-you-could-be-doing.txt'
 alias d3proj="$HOME/usr/bin/d3_project_skeleton.sh"
 alias synctovm="rsync -a ~liam/Documents/ liam@vm.liammonahan.com:~liam/Documents/"
+alias vm='ssh vm.liammonahan.com'
 
 # I use this for when I want to see the status of all my git projects kept
 # together in a single directory without cd-ing into each one..
@@ -25,8 +25,9 @@ fi
 
 # todo.txt aliases
 export TODOTXT_DEFAULT_ACTION=ls
-alias todo='~/usr/bin/todo -d ~/usr/etc/todo/todo.cfg'
+alias todo='~/usr/bin/todo.sh -d ~/usr/etc/todo/todo.cfg'
 alias t='todo'
+test -f ~/usr/completion.d/todo_completion && source ~/usr/completion.d/todo_completion
 complete -F _todo todo
 complete -F _todo t
 
