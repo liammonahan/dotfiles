@@ -27,7 +27,7 @@ fi
 export TODOTXT_DEFAULT_ACTION=ls
 alias todo='~/usr/bin/todo.sh -d ~/usr/etc/todo/todo.cfg'
 alias t='todo'
-source ~/usr/completion.d/todo_completion
+test -f ~/usr/completion.d/todo_completion && source ~/usr/completion.d/todo_completion
 complete -F _todo todo
 complete -F _todo t
 
@@ -112,5 +112,5 @@ replace () {
         echo "for non-disastrous results, this function needs two arguments"
         return 2
     fi
-    find . -type f -not -path "./.git/*" -print0 | xargs -0 sed -i "s/$1/$2/g"
+    find . -type f -not -path "./.git/*" -print0 | xargs -0 sed -i "" -e "s/$1/$2/g"
 }

@@ -1,8 +1,8 @@
 
 " Modified by: Liam Monahan
-" Last modified: 2016 Aug 17
+" Last modified: 2017 Dec 11
 
-" Use Vim settings, rather then Vi settings (much better!).
+" Use vim settings rather then vi settings
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
@@ -14,6 +14,7 @@ if has("vms")
 else
   set backup		" keep a backup file
 endif
+
 set history=50		" keep 50 lines of command line history
 set ruler		    " show the cursor position all the time
 set showcmd		    " display incomplete commands
@@ -54,20 +55,19 @@ else
   set autoindent		" always set autoindenting on
 endif " has("autocmd")
 
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-command Diff vert new | set bt=nofile | r # | 0d_ | diffthis
-	 	\ | wincmd p | diffthis
-
 highlight Comment ctermfg=white
 
 " instead of spewing swp files everywhere, locate them all centrally
 set backupdir=~/.vim/tmp
 
+" text formatting...
+set textwidth=79  " lines longers than 79 columns will be broken
 " tab shit...
-set tabstop=4
-set shiftwidth=4
-set expandtab
+set shiftwidth=4  " >> indents 4 columns
+set tabstop=4     " a hard TAB displays as 4 columns
+set expandtab     " insert spaces when hitting TAB
+set softtabstop=4 " insert/delete 4 spaces when hitting TAB/BACKSPACE
+set shiftround    " tab to the closest multiple of 'shiftwidth'
 
 " automatically enter and leave paste mode
 let &t_SI .= "\<Esc>[?2004h"
@@ -81,10 +81,7 @@ let &t_SI .= "\<Esc>[?2004h"
        return ""
 endfunction
 
-" set the textwidth to 79
-set tw=79
-
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
+let g:closetag_filenames = "*.html"
 
 " Disable bell sound
 set noerrorbells visualbell t_vb=
@@ -97,8 +94,8 @@ set wildmode=longest:list,full
 " CTRL-N twice to toggle line numbers
 nmap <C-N><C-N> :set invnumber<CR>
 
-" wrap commit messages at 72 characters
-autocmd FileType gitcommit set tw=72
+" wrap commit messages at 74 characters
+autocmd FileType gitcommit set textwidth=74
 
 " always start on the first line of a git commit message
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
