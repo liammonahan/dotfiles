@@ -114,3 +114,8 @@ replace () {
     fi
     find . -type f -not -path "./.git/*" -print0 | xargs -0 sed -i "" -e "s/$1/$2/g"
 }
+
+sendtogood () {
+    ssh vm.monahan.io 'echo -e "\n---\n\n'$1'" >> /home/liam/Documents/_good.txt'
+}
+
