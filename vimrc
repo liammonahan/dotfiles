@@ -98,4 +98,4 @@ nmap <C-N><C-N> :set invnumber<CR>
 autocmd FileType gitcommit set textwidth=74
 
 " always start on the first line of a git commit message
-autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
+au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
