@@ -7,16 +7,27 @@ PROMPT_COMMAND='CurDir=`pwd|sed -E "s!$HOME!~!"|sed -E -e "s!([^/])[^/]+/!\1/!g"
 PS1="[$NEW_HOSTNAME:\$CurDir] \$ "
 PS1='\[\e[0;32m\]$NEW_HOSTNAME\[\e[m\]\[\e[1;32m\]:\[\e[m\]\[\e[1;34m\]$CurDir\[\e[m\] \[\e[1;32m\]\$\[\e[m\] '
 
+# Function for adding directories to PATH
+pathadd() {
+  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+    PATH="$1${PATH:+":$PATH"}"
+  fi
+}
+
+# Function for sourcing files only if they exist
+source_if_exists() {
+  test -f "$1" && source "$1"
+}
 
 # sourcing
-test -f ~/.bashrc && . ~/.bashrc
-test -f ~/.localrc && . ~/.localrc
-test -f ~/.git-completion.bash && . ~/.git-completion.bash
-test -f ~/.umobjstorerc && . ~/.umobjstorerc
-test -f ~/.bash_aliases && . ~/.bash_aliases
-test -f ~/.bash_custom_prompt && . ~/.bash_custom_prompt
-test -f ~/.todo_completion && . ~/.todo_completion
-test -f ~/.exercism_completion && . ~/.exercism_completion
+source_if_exists ~/.bashrc
+source_if_exists ~/.localrc
+source_if_exists ~/.git-completion.bash
+source_if_exists ~/.umobjstorerc
+source_if_exists ~/.bash_aliases
+source_if_exists ~/.bash_custom_prompt
+source_if_exists ~/.todo_completion
+source_if_exists ~/.exercism_completion
 
 
 _complete_hosts () {

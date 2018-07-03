@@ -1,8 +1,8 @@
 
 # set exported variables
 export EDITOR=vim
-PATH=/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH
-PATH=$HOME/usr/bin:$PATH
-PATH=$HOME/.cargo/bin:$PATH
-PATH=/opt/local/bin:/opt/local/sbin:$PATH  # macports addition
+
+pathadd /Applications/Xcode.app/Contents/Developer/usr/bin
+pathadd $HOME/usr/bin
+pathadd /opt/local/bin:/opt/local/sbin  # macports addition
 export PATH
