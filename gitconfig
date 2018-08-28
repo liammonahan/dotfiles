@@ -3,6 +3,8 @@
 	name = Liam Monahan
 [push]
 	default = simple
+[color]
+    ui = auto
 [alias]
 	co = checkout
 	br = branch
