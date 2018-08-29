@@ -40,15 +40,7 @@ _complete_hosts () {
     COMPREPLY=($(compgen -W "${host_list}" -- $cur))
     return 0
 }
-complete -o default -F _complete_hosts ssh sshh nslookup scp ssh-copy-id
-complete -F _complete_hosts host
+complete -F _complete_hosts host ssh nslookup ssh-copy-id
 
 
-function add_host_to_autocomplete () {
-    host=$1
-    grep $host ~/.hostslist > /dev/null
-    [[ $? -eq 0 ]] && echo "$host already exists in the list" && return 0
-    echo $1 >> ~/.hostslist
-    sort ~/.hostslist | uniq > ~/.hostslist-tmp
-    mv ~/.hostslist-tmp ~/.hostslist
-}
+export PATH="$HOME/.cargo/bin:$PATH"
