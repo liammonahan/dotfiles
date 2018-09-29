@@ -7,6 +7,7 @@ PLATFORM=`uname -s`
 alias ealias='vim ~/.bash_aliases && . ~/.bash_aliases'
 
 # general aliases
+alias ll='ls -l'
 alias ..='cd ..'
 alias d3proj="$HOME/usr/bin/d3_project_skeleton.sh"
 alias synctovm="rsync -a ~liam/Documents/ liam@vm.liammonahan.com:~liam/Documents/"

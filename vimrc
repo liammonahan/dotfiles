@@ -61,7 +61,6 @@ highlight Comment ctermfg=white
 set backupdir=~/.vim/tmp
 
 " text formatting...
-set textwidth=79  " lines longers than 79 columns will be broken
 " tab shit...
 set shiftwidth=4  " >> indents 4 columns
 set tabstop=4     " a hard TAB displays as 4 columns

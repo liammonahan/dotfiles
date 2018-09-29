@@ -29,6 +29,8 @@ source_if_exists ~/.bash_custom_prompt
 source_if_exists ~/.todo_completion
 source_if_exists ~/.exercism_completion
 
+# readline operating in vi mode
+set -o vi
 
 _complete_hosts () {
     COMPREPLY=()
