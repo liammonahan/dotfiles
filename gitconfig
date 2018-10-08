@@ -23,3 +23,7 @@
 	switch = !legit switch
 	resync = !legit resync
 	undo = !legit undo
+[core]
+	excludesfile = ~/.gitignore_global
+[include]
+    path = ~/.gitconfig_local

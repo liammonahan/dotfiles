@@ -1,5 +1,8 @@
 #!/bin/sh
 
+git submodule init
+git submodule update
+
 # This script makes backup copies of any existing dotfiles into a folder called
 # "originals" and then symlinks all dotfiles to the copies held in this repo.
 
