@@ -22,5 +22,5 @@ do
     ln -s $DOTFILES_REPO_LOCATION/$file ~/.$file
 done
 
-git clone git@github.com:liammonahan/dotfiles-local.git DOTFILES_REPO_LOCATION/local
+git clone git@github.com:liammonahan/dotfiles-local.git $DOTFILES_REPO_LOCATION/local
 echo "you may want to set a preferred branch"
