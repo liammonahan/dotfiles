@@ -43,6 +43,9 @@ if has("autocmd")
   autocmd FileType text setlocal textwidth=78
   autocmd BufRead,BufNewFile *.rst setlocal textwidth=78
 
+  " rST indents 3 spaces
+  autocmd BufRead,BufNewFile *.rst setlocal shiftwidth=3 tabstop=3 softtabstop=3
+
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
   " (happens when dropping a file on gvim).
