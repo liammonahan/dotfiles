@@ -36,6 +36,19 @@ complete -F _todo t
 alias ff='find . -type f -name'
 alias fd='find . -type d -name'
 
+# docker
+dattach() {
+    docker-compose exec web bash
+}
+dbuild() {
+    docker-compose build
+}
+dup() {
+    docker-compose up
+}
+ddown() {
+    docker-compose down
+}
 
 # functions
 
