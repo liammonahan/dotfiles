@@ -1,10 +1,19 @@
 
 " Modified by: Liam Monahan
-" Last modified: 2017 Dec 11
+" Last modified: 2019 Feb 28
 
 " Use vim settings rather then vi settings
 " This must be first, because it changes other options as a side effect.
-set nocompatible
+set nocompatible    " required by vundle
+filetype off        " required by vundle
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-commentary'
+
+" Initialize plugin system
+call plug#end()
+
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -45,6 +54,8 @@ if has("autocmd")
 
   " rST indents 3 spaces
   autocmd BufRead,BufNewFile *.rst setlocal shiftwidth=3 tabstop=3 softtabstop=3
+  " HTML indents 2 spaces
+  autocmd BufRead,BufNewFile *.htm,*.html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
