@@ -127,7 +127,7 @@ replace () {
         echo "for non-disastrous results, this function needs two arguments"
         return 2
     fi
-    find . -type f -not -path "./.git/*" -print0 | xargs -0 sed -i "" -e "s/$1/$2/g"
+    find . -type f -not -path "./.git/*" -print0 | xargs -0 sed -i -e "s%$1%$2%g"
 }
 
 sendtogood () {
