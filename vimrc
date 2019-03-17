@@ -1,6 +1,6 @@
 
 " Modified by: Liam Monahan
-" Last modified: 2019 Feb 28
+" Last modified: 2019 Mar 17
 
 " Use vim settings rather then vi settings
 " This must be first, because it changes other options as a side effect.
@@ -113,3 +113,9 @@ autocmd FileType gitcommit set textwidth=74
 
 " always start on the first line of a git commit message
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
+
+" do not allow yourself to ever rely on the arrow keys for navigation
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
