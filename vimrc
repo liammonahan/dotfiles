@@ -1,6 +1,6 @@
 
 " Modified by: Liam Monahan
-" Last modified: 2019 Mar 17
+" Last modified: 2019 Mar 18
 
 " Use vim settings rather then vi settings
 " This must be first, because it changes other options as a side effect.
@@ -10,6 +10,7 @@ filetype off        " required by vundle
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-commentary'
+Plug 'vim-airline/vim-airline'
 
 " Initialize plugin system
 call plug#end()
