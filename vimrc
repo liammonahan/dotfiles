@@ -1,11 +1,10 @@
 
 " Modified by: Liam Monahan
-" Last modified: 2019 Mar 18
+" Last modified: 2019 Mar 20
 
 " Use vim settings rather then vi settings
 " This must be first, because it changes other options as a side effect.
-set nocompatible    " required by vundle
-filetype off        " required by vundle
+set nocompatible
 
 " automatic installation of vim-plug if missing
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -14,14 +13,46 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" Start initialization of vim-plug
 call plug#begin('~/.vim/plugged')
 
+Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdtree'
 
 " Initialize plugin system
 call plug#end()
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Configuration items specifically for installed plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"
+" NERDTree configuration
+
+" open NERDTree automatically when vim starts up if no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" change the nerdtree delim character.  Neeeded for macOS's default vim
+let g:NERDTreeNodeDelimiter = "\u00a0"
+
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" open the NERDTree window with CTRL-T
+nmap <C-T> :NERDTreeToggle<CR>
+
+"
+" vim-closetag configuration
+
+" Register filetypes to close tags for
+let g:closetag_filenames = "*.html"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" End installed plugin configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -78,8 +109,6 @@ else
   set autoindent		" always set autoindenting on
 endif " has("autocmd")
 
-highlight Comment ctermfg=white
-
 " instead of spewing swp files everywhere, locate them all centrally
 set backupdir=~/.vim/tmp
 
@@ -90,6 +119,9 @@ set tabstop=4     " a hard TAB displays as 4 columns
 set expandtab     " insert spaces when hitting TAB
 set softtabstop=4 " insert/delete 4 spaces when hitting TAB/BACKSPACE
 set shiftround    " tab to the closest multiple of 'shiftwidth'
+
+" make comment text white
+highlight Comment ctermfg=white
 
 " automatically enter and leave paste mode
 let &t_SI .= "\<Esc>[?2004h"
@@ -102,8 +134,6 @@ let &t_SI .= "\<Esc>[?2004h"
      set paste
        return ""
 endfunction
-
-let g:closetag_filenames = "*.html"
 
 " Disable bell sound
 set noerrorbells visualbell t_vb=
