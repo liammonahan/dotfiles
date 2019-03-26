@@ -13,6 +13,7 @@
 	s = status
 	st = status
 	dc = diff --cached
+	rebase-feature = "!f() { git rebase -i `git merge-base --fork-point master`; }; f"
 	branches = !legit branches
 	publish = !legit publish
 	unpublish = !legit unpublish
