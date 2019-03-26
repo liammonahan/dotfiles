@@ -44,6 +44,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " open the NERDTree window with CTRL-T
 nmap <C-T> :NERDTreeToggle<CR>
 
+" filter out certain filetypes in NERDTree
+let NERDTreeIgnore = ['\.pyc$']
+
 "
 " vim-closetag configuration
 
@@ -138,6 +141,9 @@ endfunction
 " Disable bell sound
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
+
+" list all buffers and prompt for a number to switch to
+nnoremap gb :ls<CR>:b<Space>
 
 " enhanced tab completion
 set wildmenu
