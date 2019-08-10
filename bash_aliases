@@ -12,7 +12,7 @@ alias ..='cd ..'
 alias d3proj="$HOME/usr/bin/d3_project_skeleton.sh"
 alias synctovm="rsync -a ~liam/Documents/ liam@vm.liammonahan.com:~liam/Documents/"
 alias vm='ssh vm.liammonahan.com'
-alias prunemergedbranches='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d; git fetch --prune'
+alias prunemergedbranches='git checkout master && git pull && git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d; git fetch --prune'
 
 # I use this for when I want to see the status of all my git projects kept
 # together in a single directory without cd-ing into each one..
