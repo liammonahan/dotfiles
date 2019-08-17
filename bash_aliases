@@ -10,7 +10,7 @@ alias ealias='vim ~/.bash_aliases && . ~/.bash_aliases'
 alias ll='ls -l'
 alias ..='cd ..'
 alias d3proj="$HOME/usr/bin/d3_project_skeleton.sh"
-alias synctovm="rsync -a ~liam/Documents/ liam@vm.liammonahan.com:~liam/Documents/"
+alias synctovm="rsync -a --delete ~liam/Documents/ liam@vm.liammonahan.com:~liam/Documents/"
 alias vm='ssh vm.liammonahan.com'
 alias prunemergedbranches='git checkout master && git pull && git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d; git fetch --prune'
 
