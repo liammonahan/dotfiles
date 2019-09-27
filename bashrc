@@ -1,4 +1,7 @@
 
+# these color settings only take effect on MacOS
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
 # set exported variables
 export EDITOR=vim
 
