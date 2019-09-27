@@ -38,7 +38,7 @@ alias fd='find . -type d -name'
 
 # docker
 dattach() {
-    docker-compose exec web bash
+    docker-compose exec web scl enable rh-python36 bash
 }
 dbuild() {
     docker-compose build
