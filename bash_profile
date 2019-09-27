@@ -43,6 +43,3 @@ _complete_hosts () {
     return 0
 }
 complete -F _complete_hosts host ssh nslookup ssh-copy-id
-
-
-export PATH="$HOME/.cargo/bin:$PATH"
