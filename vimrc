@@ -46,6 +46,12 @@ let g:ale_python_pyls_config = {
 \   },
 \ }
 
+" Note: in order to make use of the linters/fixers, you will want to install:
+"   - autopep8
+"   - flake8
+"   - python-language-server
+"   - pylint-django (optional)
+
 let g:ale_linters_explicit = 1
 let g:ale_linters = {}
 let g:ale_linters.python = ['flake8', 'pyls']
