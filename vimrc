@@ -20,13 +20,52 @@ Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
+Plug 'dense-analysis/ale'
 
 " Initialize plugin system
 call plug#end()
 
+let mapleader = ","
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Configuration items specifically for installed plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" ALE
+
+let g:ale_python_pyls_config = {
+\   'pyls': {
+\     'plugins': {
+\       'pycodestyle': {
+\         'enabled': v:false
+\       },
+\       'pylint': {
+\         'enabled': v:false
+\       },
+\     }
+\   },
+\ }
+
+let g:ale_linters_explicit = 1
+let g:ale_linters = {}
+let g:ale_linters.python = ['flake8', 'pyls']
+let g:ale_fixers = {}
+let g:ale_fixers.python = ['autopep8']
+
+let g:ale_completion_enabled = 1
+let g:ale_fix_on_save = 1
+let g:ale_sign_warning = '!!'
+let g:ale_sign_error = '✗✗'
+highlight link ALEWarningSign String
+highlight link ALEErrorSign Title
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+nmap <silent> <leader>x :ALENext<cr>
+nmap <silent> <leader>z :ALEPrevious<cr>
+nmap <silent> <leader>j :ALEHover<cr>
+nmap gg :ALEGoToDefinition<CR>
 
 "
 " NERDTree configuration
