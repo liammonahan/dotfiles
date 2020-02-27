@@ -17,6 +17,7 @@
 	branches = !legit branches
 	publish = !legit publish
 	unpublish = !legit unpublish
+    show-tag = !sh -c 'git rev-parse $1 | xargs git cat-file -p' -
 	sync = !legit sync
 	switch = !legit switch
 	resync = !legit resync
