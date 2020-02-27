@@ -47,10 +47,9 @@ let g:ale_python_pyls_config = {
 \ }
 
 " Note: in order to make use of the linters/fixers, you will want to install:
-"   - autopep8
-"   - flake8
-"   - python-language-server
-"   - pylint-django (optional)
+"   - autopep8 flake8 python-language-server pylint-django
+
+inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 let g:ale_linters_explicit = 1
 let g:ale_linters = {}
