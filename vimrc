@@ -37,10 +37,10 @@ let g:ale_python_pyls_config = {
 \   'pyls': {
 \     'plugins': {
 \       'pycodestyle': {
-\         'enabled': v:false
+\         'enabled': 0
 \       },
 \       'pylint': {
-\         'enabled': v:false
+\         'enabled': 0
 \       },
 \     }
 \   },
