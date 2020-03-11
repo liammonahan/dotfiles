@@ -207,3 +207,7 @@ noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
+
+" map F5 to insert the current date in either normal or insert mode
+nnoremap <F5> "=strftime("[%x]")<CR>P
+inoremap <F5> <C-R>=strftime("[%x]")<CR>
