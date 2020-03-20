@@ -7,8 +7,11 @@ export EDITOR=vim
 
 NPM_PACKAGES="${HOME}/.npm-packages"
 
-PATH="$NPM_PACKAGES/bin:$PATH"
-PATH=/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH
-PATH=$HOME/usr/bin:$PATH
-PATH=/opt/local/bin:/opt/local/sbin:$PATH  # macports addition
+pathadd "$NPM_PACKAGES/bin"
+pathadd /Applications/Xcode.app/Contents/Developer/usr/bin
+pathadd $HOME/usr/bin
+pathadd /opt/local/bin   # macports addition
+pathadd /opt/local/sbin  # macports addition
+pathadd "$HOME/.cargo/bin"
+
 export PATH
