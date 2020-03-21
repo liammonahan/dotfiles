@@ -16,6 +16,7 @@ alias prunemergedbranches='git checkout master && git pull && git branch --merge
 alias envsource='source env/bin/activate'
 alias install-lang='pip install autopep8 flake8 python-language-server pylint-django'
 alias mkenv='python3.6 -m venv env && source env/bin/activate && pip install -U pip && install-lang'
+alias obliquestrat='shuf -n 1 $HOME/usr/etc/obliquestrat/terms.txt'
 
 # I use this for when I want to see the status of all my git projects kept
 # together in a single directory without cd-ing into each one..
