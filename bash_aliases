@@ -99,7 +99,7 @@ nb () {
 }
 
 define () { 
-  curl -s dict://dict.org/d:$1 | egrep --color=auto -v "^(220|250|150|151|221)"
+  curl -s dict://dict.org/d:$1 | egrep --color=auto -v "^(220|250|150|151|221)" | less
 }
 
 cls () {
