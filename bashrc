@@ -7,6 +7,7 @@ export EDITOR=vim
 
 NPM_PACKAGES="${HOME}/.npm-packages"
 
+pathadd "$HOME/.dotfiles/bin"
 pathadd "$NPM_PACKAGES/bin"
 pathadd /Applications/Xcode.app/Contents/Developer/usr/bin
 pathadd $HOME/usr/bin
