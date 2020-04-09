@@ -70,4 +70,4 @@ function sshagent_init {
 }
 
 alias sagent="sshagent_init"
-sagent
+sshagent_init
