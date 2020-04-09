@@ -26,6 +26,8 @@ alias list_git_statuses='for dir in *; do [[ ! -d "$dir/.git" ]] && continue; ec
 # color ls output
 if [ $PLATFORM == 'Darwin' ]; then
     alias ls='ls -G'
+    # open a new iTerm tab in the cwd
+    alias newtab='open . -a iterm'
 else
     alias ls='ls --color'
 fi
