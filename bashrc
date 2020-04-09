@@ -15,11 +15,15 @@ pathadd() {
             }
 
 pathadd "$HOME/.dotfiles/bin"
-pathadd "$NPM_PACKAGES/bin"
 pathadd /Applications/Xcode.app/Contents/Developer/usr/bin
 pathadd $HOME/usr/bin
 pathadd /opt/local/bin   # macports addition
 pathadd /opt/local/sbin  # macports addition
+
+# programming language local bin directories (if present)
+pathadd "$NPM_PACKAGES/bin"
 pathadd "$HOME/.cargo/bin"
+pathadd "$HOME/Library/Python/3.7/bin"
+pathadd "$HOME/.poetry/bin"
 
 export PATH
