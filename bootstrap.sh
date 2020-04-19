@@ -8,7 +8,7 @@ git submodule update
 
 DOTFILES_REPO_LOCATION="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ORIGINALS=$DOTFILES_REPO_LOCATION/originals
-FILES=( bash_profile bashrc bash_aliases vimrc screenrc gitconfig tmux.conf)
+FILES=( bash_profile bashrc bash_aliases vimrc screenrc gitconfig gitignore_global tmux.conf)
 
 mkdir -p $ORIGINALS
 
