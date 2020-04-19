@@ -32,6 +32,7 @@ if [ $PLATFORM == 'Darwin' ]; then
     alias ls='ls -G'
     # open a new iTerm tab in the cwd
     alias newtab='open . -a iterm'
+    alias +='newtab'
 else
     alias ls='ls --color'
 fi
