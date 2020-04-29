@@ -19,6 +19,21 @@ alias install-lang='pip install autopep8 flake8 python-language-server pylint-dj
 alias mkenv='python3.6 -m venv env && source env/bin/activate && pip install -U pip && install-lang'
 alias obliquestrat='shuf -n 1 $HOME/usr/etc/obliquestrat/terms.txt'
 
+# staff repos
+alias umobj='cd ~/code/staff/umobj'
+alias summons='cd ~/code/staff/summons'
+alias umsappy='cd ~/code/staff/umsappy'
+alias umldappy='cd ~/code/staff/umldappy'
+alias qav='cd ~/code/staff/qav'
+alias umldappy='cd ~/code/staff/umldappy'
+alias umreportpy='cd ~/code/staff/umreportpy'
+alias cyruslib='cd ~/code/staff/cyruslib'
+# django repos
+alias requests='cd ~/code/django/requests'
+alias directory='cd ~/code/django/directory'
+alias umobjstore='cd ~/code/django/UMobjstore'
+alias rgwadmin='cd ~/code/github/rgwadmin'
+
 # displayplacer configurations
 alias displayplacer-laptop-on-desk='displayplacer "id:D84861AC-E10D-1B4C-9B1B-4FA29E931254 res:1920x1080 hz:60 color_depth:8 scaling:on origin:(0,0) degree:0" "id:0E70963A-6DB6-54DF-D518-1C663ABC3100 res:1680x1050 color_depth:4 scaling:on origin:(129,1080) degree:0" "id:E065CF81-C252-F86C-B30F-C2FE82485B7C res:1080x1920 hz:60 color_depth:8 scaling:on origin:(1920,-374) degree:90"'
 alias displayplacer-laptop-on-stand='displayplacer "id:D84861AC-E10D-1B4C-9B1B-4FA29E931254 res:1920x1080 hz:60 color_depth:8 scaling:on origin:(0,0) degree:0" "id:0E70963A-6DB6-54DF-D518-1C663ABC3100 res:1680x1050 color_depth:4 scaling:on origin:(-1680,0) degree:0" "id:E065CF81-C252-F86C-B30F-C2FE82485B7C res:1080x1920 hz:60 color_depth:8 scaling:on origin:(1920,-374) degree:90"'
