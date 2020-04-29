@@ -79,48 +79,6 @@ ddown() {
 
 # functions
 
-# nota bene
-# Arguments:
-#   $1 - class
-#   $2 - date (optional)
-nb () {
-  DATETIME=$(date "+%Y-%m-%d")
-
-  # check that a class was passed in
-  if [ -z $1 ]; then
-    echo "must give class:"
-    ls ~/school | grep -e '[0-9][0-9][0-9]'
-    return 1
-  else
-    CLASS="$1"
-  fi
-
-  # check that the class is valid
-  if [ ! -d ~/school/$CLASS ]; then
-    2>1 echo "Class does not exist: $CLASS"
-    ls ~/school | grep -e '[0-9][0-9][0-9]'
-    return 1
-  fi
-
-  # check if a date was passed in 
-  if [ ! -z $2 ]; then
-    DATETIME=$2
-  fi
-
-  if [ -d ~/school/$CLASS/$DATETIME ]; then
-    echo "retrieving notes for $DATETIME"
-    if [ -f ~/school/$CLASS/$DATETIME/$DATETIME.txt ]; then 
-      mvim ~/school/$CLASS/$DATETIME/$DATETIME.txt
-    else
-      2>1 echo "filestructure is irregular"
-    fi
-  else
-    echo "creating notes for $DATETIME"
-    mkdir ~/school/$CLASS/$DATETIME
-    cp ~/school/$CLASS/template.txt ~/school/$CLASS/$DATETIME/$DATETIME.txt && mvim ~/school/$CLASS/$DATETIME/$DATETIME.txt
-  fi
-}
-
 define () { 
   curl -s dict://dict.org/d:$1 | egrep --color=auto -v "^(220|250|150|151|221)" | less
 }
