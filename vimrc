@@ -53,7 +53,7 @@ inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 let g:ale_linters_explicit = 1
 let g:ale_linters = {}
-let g:ale_linters.python = ['flake8', 'pyls']
+let g:ale_linters.python = ['flake8']
 let g:ale_fixers = {}
 let g:ale_fixers.python = ['autopep8']
 
