@@ -74,20 +74,26 @@ cls () {
 
 # quick and dirty linking service
 linkme () {
-  FILE=$1
+  FILE="$1"
   [ -z "$FILE" ] && echo please specify a file && exit 1
   if [ $PLATFORM == 'Darwin' ]; then
-    MD5=`md5 -q $FILE`
+    MD5=`md5 -q "$FILE"`
   else
-    MD5=`md5sum $FILE | awk '{print $1}'`
+    MD5=`md5sum "$FILE" | awk '{print $1}'`
   fi
-  scp $FILE root@link.monahan.io:/var/www/html/l/$MD5 > /dev/null
+  scp "$FILE" root@link.monahan.io:/var/www/html/l/$MD5 > /dev/null
   LINK_URL=https://link.monahan.io/l/$MD5
+  ssh root@link.monahan.io "echo $LINK_URL " — " `basename "$FILE"` >> /var/www/links.txt"
   if [ $PLATFORM == 'Darwin' ]; then
     echo $LINK_URL | pbcopy
     echo "    ~~~~ Link copied to clipboard ~~~    "
   fi
   echo $LINK_URL
+}
+
+# find the most recent links
+recentlinks () {
+    ssh root@link.monahan.io "tail -5 /var/www/links.txt"
 }
 
 # sed find and replace
