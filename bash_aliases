@@ -82,7 +82,7 @@ linkme () {
     MD5=`md5sum $FILE | awk '{print $1}'`
   fi
   scp $FILE root@link.monahan.io:/var/www/html/l/$MD5 > /dev/null
-  LINK_URL=http://link.monahan.io/l/$MD5
+  LINK_URL=https://link.monahan.io/l/$MD5
   if [ $PLATFORM == 'Darwin' ]; then
     echo $LINK_URL | pbcopy
     echo "    ~~~~ Link copied to clipboard ~~~    "
