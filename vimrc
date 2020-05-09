@@ -211,3 +211,6 @@ noremap <Right> <nop>
 " map F5 to insert the current date in either normal or insert mode
 nnoremap <F5> "=strftime("[%x]")<CR>P
 inoremap <F5> <C-R>=strftime("[%x]")<CR>
+
+" Auto-source this file when we write it
+autocmd! BufWritePost .vimrc source %
