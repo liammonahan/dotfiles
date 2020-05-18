@@ -5,6 +5,7 @@ BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 if output=$(git --git-dir $BASEDIR/.git status --porcelain) && [ -z "$output" ];
 then
     echo "working directory clean"
+    git --git-dir $BASEDIR/.git pull
 else
     sendmail liam@umiacs.umd.edu <<EOF
 Subject: $HOSTNAME dotfiles have uncommitted changes
