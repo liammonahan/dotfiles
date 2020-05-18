@@ -4,7 +4,7 @@ BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 if output=$(git --git-dir "$BASEDIR/.git" --work-tree "$BASEDIR" status --porcelain) && [ -z "$output" ];
 then
-    git --git-dir "$BASEDIR/.git" --work-tree "$BASEDIR" pull
+    git --git-dir "$BASEDIR/.git" --work-tree "$BASEDIR" pull > /dev/null
 else
     /usr/sbin/sendmail liam@umiacs.umd.edu <<EOF
 Subject: $HOSTNAME dotfiles have uncommitted changes
