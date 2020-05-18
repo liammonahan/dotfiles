@@ -7,7 +7,7 @@ then
     echo "working directory clean"
     git --git-dir $BASEDIR/.git pull
 else
-    sendmail liam@umiacs.umd.edu <<EOF
+    /usr/sbin/sendmail liam@umiacs.umd.edu <<EOF
 Subject: $HOSTNAME dotfiles have uncommitted changes
 To: Liam Monahan <liam@umiacs.umd.edu>
 From: Liam Monahan <liam@umiacs.umd.edu>
