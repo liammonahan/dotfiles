@@ -48,6 +48,14 @@ complete -F _todo t
 alias ff='find . -type f -name'
 alias fd='find . -type d -name'
 
+remote-diff() {
+    FILE="$1"
+    HOST1="$2"
+    HOST2="$3"
+
+    diff <(ssh $HOST1 -l root cat $FILE) <(ssh $HOST2 -l root cat $FILE)
+}
+
 # docker
 dattach() {
     docker-compose exec web bash
