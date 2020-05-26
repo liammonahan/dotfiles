@@ -23,7 +23,7 @@ pathadd /opt/local/sbin  # macports addition
 # programming language local bin directories (if present)
 pathadd "$NPM_PACKAGES/bin"
 pathadd "$HOME/.cargo/bin"
-pathadd "$HOME/Library/Python/3.7/bin"
+pathadd "$HOME/Library/Python/3.8/bin"
 pathadd "$HOME/.poetry/bin"
 
 export PATH
