@@ -21,6 +21,7 @@ Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'dense-analysis/ale'
+Plug 'pangloss/vim-javascript'
 
 " Initialize plugin system
 call plug#end()
@@ -95,7 +96,7 @@ let NERDTreeIgnore = ['\.pyc$']
 " vim-closetag configuration
 
 " Register filetypes to close tags for
-let g:closetag_filenames = "*.html"
+let g:closetag_filenames = "*.html,*.jsx"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " End installed plugin configuration
