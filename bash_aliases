@@ -73,6 +73,10 @@ ddown() {
 
 # functions
 
+grepp () {
+  grep "$1" * -rI
+}
+
 define () { 
   curl -s dict://dict.org/d:$1 | egrep --color=auto -v "^(220|250|150|151|221)" | less
 }
