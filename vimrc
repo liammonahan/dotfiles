@@ -22,6 +22,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'dense-analysis/ale'
 Plug 'pangloss/vim-javascript'
+Plug 'vimwiki/vimwiki'
 
 " Initialize plugin system
 call plug#end()
@@ -76,10 +77,6 @@ nmap gg :ALEGoToDefinition<CR>
 "
 " NERDTree configuration
 
-" open NERDTree automatically when vim starts up if no files were specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 " change the nerdtree delim character.  Neeeded for macOS's default vim
 let g:NERDTreeNodeDelimiter = "\u00a0"
 
@@ -97,6 +94,12 @@ let NERDTreeIgnore = ['\.pyc$']
 
 " Register filetypes to close tags for
 let g:closetag_filenames = "*.html,*.jsx"
+
+"
+" vimwiki configuration
+
+" auto compile vimwiki pages when written out
+autocmd FileType vimwiki autocmd BufWritePost <buffer> silent Vimwiki2HTML
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " End installed plugin configuration
