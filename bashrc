@@ -25,5 +25,6 @@ pathadd "$NPM_PACKAGES/bin"
 pathadd "$HOME/.cargo/bin"
 pathadd "$HOME/Library/Python/3.8/bin"
 pathadd "$HOME/.poetry/bin"
+pathadd "$HOME/.local/bin"
 
 export PATH
