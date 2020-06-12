@@ -216,5 +216,11 @@ noremap <Right> <nop>
 nnoremap <F5> "=strftime("[%x]")<CR>P
 inoremap <F5> <C-R>=strftime("[%x]")<CR>
 
+" Hold down control to cycle between windows with standard movement keys
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
 " Auto-source this file when we write it
 autocmd! BufWritePost .vimrc source %
