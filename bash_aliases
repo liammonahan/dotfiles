@@ -22,8 +22,8 @@ alias til='cd ~/code/til && git status && echo && ls'
 alias wiki='vim -c VimwikiIndex'
 
 # displayplacer configurations
-alias displayplacer-laptop-on-desk='displayplacer "id:D84861AC-E10D-1B4C-9B1B-4FA29E931254 res:1920x1080 hz:60 color_depth:8 scaling:on origin:(0,0) degree:0" "id:0E70963A-6DB6-54DF-D518-1C663ABC3100 res:1680x1050 color_depth:4 scaling:on origin:(129,1080) degree:0" "id:E065CF81-C252-F86C-B30F-C2FE82485B7C res:1080x1920 hz:60 color_depth:8 scaling:on origin:(1920,-374) degree:90"'
-alias displayplacer-laptop-on-stand='displayplacer "id:D84861AC-E10D-1B4C-9B1B-4FA29E931254 res:1920x1080 hz:60 color_depth:8 scaling:on origin:(0,0) degree:0" "id:0E70963A-6DB6-54DF-D518-1C663ABC3100 res:1680x1050 color_depth:4 scaling:on origin:(-1680,0) degree:0" "id:E065CF81-C252-F86C-B30F-C2FE82485B7C res:1080x1920 hz:60 color_depth:8 scaling:on origin:(1920,-374) degree:90"'
+alias displayplacer-laptop-on-desk='displayplacer "id:F0D0025D-4FD0-CD99-8E83-E045CD34F4DA res:2560x1440 hz:60 color_depth:8 scaling:on origin:(0,0) degree:0" "id:0E70963A-6DB6-54DF-D518-1C663ABC3100 res:1680x1050 color_depth:4 scaling:on origin:(232,1440) degree:0"'
+alias displayplacer-laptop-on-stand='displayplacer "id:F0D0025D-4FD0-CD99-8E83-E045CD34F4DA res:2560x1440 hz:60 color_depth:8 scaling:on origin:(0,0) degree:0" "id:0E70963A-6DB6-54DF-D518-1C663ABC3100 res:1680x1050 color_depth:4 scaling:on origin:(-1680,145) degree:0"'
 
 # I use this for when I want to see the status of all my git projects kept
 # together in a single directory without cd-ing into each one..
