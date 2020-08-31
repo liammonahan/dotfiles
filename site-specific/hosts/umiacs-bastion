@@ -1,6 +1,6 @@
 PATH=/opt/umsappy/bin/:$PATH
 
-alias rootkey='ssh-add -t 604800 ~/.ssh/id_rsa_rootkey'
+alias rootkey='ssh-add -t 518400 ~/.ssh/id_rsa_rootkey'  # active for 6 days
 
 function sshagent_findsockets {
     find /tmp -uid $(id -u) -type s -name agent.\* 2>/dev/null
