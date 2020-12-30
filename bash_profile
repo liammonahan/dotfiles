@@ -22,11 +22,6 @@ source_if_exists ~/.bash_custom_prompt
 source_if_exists ~/.todo_completion
 source_if_exists ~/.exercism_completion
 
-# add completions for pipx if register-python-argcomplete exists
-hash register-python-argcomplete 2>/dev/null && \
-    hash pipx 2>/dev/null && \
-    eval "$(register-python-argcomplete pipx)"
-
 # readline operating in vi mode
 set -o vi
 
