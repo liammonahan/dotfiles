@@ -47,5 +47,5 @@ _pipenv_completion() {
 
 complete -F _pipenv_completion -o default pipenv
 
-# Silence warnign about using bash on macOS.
+# Silence warning about using bash on macOS.
 export BASH_SILENCE_DEPRECATION_WARNING=1
