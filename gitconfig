@@ -21,3 +21,5 @@
 	excludesfile = ~/.gitignore_global
 [include]
     path = ~/.dotfiles/local/gitconfig_local
+[init]
+	defaultBranch = master
