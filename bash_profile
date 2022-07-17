@@ -21,6 +21,7 @@ source_if_exists ~/.bash_aliases
 source_if_exists ~/.bash_custom_prompt
 source_if_exists ~/.todo_completion
 source_if_exists ~/.exercism_completion
+source_if_exists ~/.cargo/env
 
 # readline operating in vi mode
 set -o vi
