@@ -22,7 +22,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'dense-analysis/ale'
 Plug 'pangloss/vim-javascript'
-Plug 'vimwiki/vimwiki'
 
 " Initialize plugin system
 call plug#end()
@@ -95,12 +94,6 @@ let NERDTreeIgnore = ['\.pyc$']
 " Register filetypes to close tags for
 let g:closetag_filenames = "*.html,*.jsx"
 
-"
-" vimwiki configuration
-
-" auto compile vimwiki pages when written out
-autocmd FileType vimwiki autocmd BufWritePost <buffer> silent Vimwiki2HTML
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " End installed plugin configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -140,7 +133,7 @@ if has("autocmd")
 
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
-  autocmd BufRead,BufNewFile *.rst setlocal textwidth=78
+  autocmd BufRead,BufNewFile *.rst,*.md setlocal textwidth=78
 
   " rST indents 3 spaces
   autocmd BufRead,BufNewFile *.rst setlocal shiftwidth=3 tabstop=3 softtabstop=3
