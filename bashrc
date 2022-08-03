@@ -5,8 +5,6 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 # set exported variables
 export EDITOR=vim
 
-NPM_PACKAGES="${HOME}/.npm-packages"
-
 # Function for adding directories to PATH
 pathadd() {
     if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
@@ -21,9 +19,11 @@ pathadd /opt/local/bin   # macports addition
 pathadd /opt/local/sbin  # macports addition
 
 # programming language local bin directories (if present)
-pathadd "$NPM_PACKAGES/bin"
 pathadd "$HOME/.cargo/bin"
 pathadd "$HOME/.poetry/bin"
 pathadd "$HOME/.local/bin"
+pathadd "$HOME/.yarn/bin"
+pathadd "$HOME/.config/yarn/global/node_modules/.bin"
 
 export PATH
+

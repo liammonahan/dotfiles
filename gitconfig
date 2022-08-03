@@ -10,6 +10,7 @@
 	ahead = log origin/master..HEAD --oneline
 	accept-ours = "!f() { git checkout --ours -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
 	accept-theirs = "!f() { git checkout --theirs -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
+    stash-and-pull = "!f() { git stash; git fetch origin master; git rebase origin/master; git stash pop; }; f"
 	s = status
 	st = status
 	dc = diff --cached
