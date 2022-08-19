@@ -15,7 +15,7 @@ source_if_exists() {
 # sourcing
 source_if_exists ~/.bashrc
 source_if_exists ~/.localrc
-source_if_exists ~/.git-completion.bash
+source_if_exists ~/.dotfiles/completions/bash/git-completion.bash
 source_if_exists ~/.umobjstorerc
 source_if_exists ~/.bash_aliases
 source_if_exists ~/.bash_custom_prompt
