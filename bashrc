@@ -24,6 +24,7 @@ pathadd "$HOME/.poetry/bin"
 pathadd "$HOME/.local/bin"
 pathadd "$HOME/.yarn/bin"
 pathadd "$HOME/.config/yarn/global/node_modules/.bin"
+pathadd "$HOME/.rvm/bin"
 
 export PATH
 
