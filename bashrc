@@ -13,10 +13,8 @@ pathadd() {
 }
 
 pathadd "$HOME/.dotfiles/bin"
-pathadd /Applications/Xcode.app/Contents/Developer/usr/bin
-pathadd $HOME/usr/bin
-pathadd /opt/local/bin   # macports addition
-pathadd /opt/local/sbin  # macports addition
+pathadd "$HOME/.local/bin"
+pathadd "$HOME/usr/bin"
 
 # programming language local bin directories (if present)
 pathadd "$HOME/.cargo/bin"
