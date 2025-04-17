@@ -16,12 +16,9 @@ alias d3proj="$HOME/usr/bin/d3_project_skeleton.sh"
 alias synctovm="rsync -a --stats --exclude env --exclude '*.pyc' --delete ~liam/Documents/ liam@vm.liammonahan.com:~liam/Documents/"
 alias vm='ssh vm.liammonahan.com'
 alias prunemergedbranches='MAINBR=$(git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@") && git checkout $MAINBR && git pull && git branch --merged | egrep -v "(^\*|$MAINBR)" | xargs git branch -d 2> /dev/null; git fetch --prune'
-alias envsource='source env/bin/activate'
-alias install-lang='pip install autopep8 flake8 python-language-server pylint-django'
-alias mkenv='python3.6 -m venv env && source env/bin/activate && pip install -U pip && install-lang'
+alias mkenv='python3.9 -m venv env && source env/bin/activate && pip install -U pip'
 alias obliquestrat='shuf -n 1 $HOME/usr/etc/obliquestrat/terms.txt'
 alias til='cd ~/code/til && git status && echo && ls'
-alias wiki='vim -c VimwikiIndex'
 
 # I use this for when I want to see the status of all my git projects kept
 # together in a single directory without cd-ing into each one..
