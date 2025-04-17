@@ -16,7 +16,6 @@ source_if_exists() {
 source_if_exists ~/.bashrc
 source_if_exists ~/.localrc
 source_if_exists ~/.dotfiles/completions/bash/git-completion.bash
-source_if_exists ~/.umobjstorerc
 source_if_exists ~/.bash_aliases
 source_if_exists ~/.bash_custom_prompt
 source_if_exists ~/.todo_completion
@@ -50,3 +49,6 @@ complete -F _pipenv_completion -o default pipenv
 
 # Silence warning about using bash on macOS.
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# warn about uncommitted dotfiles
+git --git-dir "$HOME/.dotfiles/.git" --work-tree "$HOME/.dotfiles" diff --quiet || echo "~~~ dotfiles have uncommitted changes ~~~"

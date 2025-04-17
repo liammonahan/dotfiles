@@ -22,7 +22,4 @@ do
     ln -s $DOTFILES_REPO_LOCATION/$file ~/.$file
 done
 
-echo "Installing cronjob to update this repo daily"
-(crontab -l 2>/dev/null; echo "45 16 * * * $DOTFILES_REPO_LOCATION/cron_update.sh") | crontab -
-
 [ ! -d $DOTFILES_REPO_LOCATION/local ] && git clone git@github.com:liammonahan/dotfiles-local.git $DOTFILES_REPO_LOCATION/local && echo "you may want to set a preferred branch"
