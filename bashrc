@@ -19,7 +19,6 @@ pathadd "$HOME/usr/bin"
 # programming language local bin directories (if present)
 pathadd "$HOME/.cargo/bin"
 pathadd "$HOME/.poetry/bin"
-pathadd "$HOME/.local/bin"
 pathadd "$HOME/.yarn/bin"
 pathadd "$HOME/.config/yarn/global/node_modules/.bin"
 pathadd "$HOME/.rvm/bin"
