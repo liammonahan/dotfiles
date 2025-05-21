@@ -11,7 +11,6 @@ alias ll='ls -l'
 alias ..='cd ..'
 alias grep='grep --exclude-dir .git --exclude-dir env'
 alias gg='git grep'
-alias gti='git'
 alias d3proj="$HOME/usr/bin/d3_project_skeleton.sh"
 alias synctovm="rsync -a --stats --exclude env --exclude '*.pyc' --delete ~liam/Documents/ liam@vm.liammonahan.com:~liam/Documents/"
 alias vm='ssh vm.liammonahan.com'
