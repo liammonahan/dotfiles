@@ -1,6 +1,6 @@
 
 " Modified by: Liam Monahan
-" Last modified: 2019 Mar 20
+" Last modified: 2022 Jul 17
 
 " Use vim settings rather then vi settings
 " This must be first, because it changes other options as a side effect.

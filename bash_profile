@@ -25,28 +25,6 @@ source_if_exists ~/.cargo/env
 # readline operating in vi mode
 set -o vi
 
-_complete_hosts () {
-    COMPREPLY=()
-    cur="${COMP_WORDS[COMP_CWORD]}"
-
-    host_list=`{
-        cat ~/.hostslist
-    } | tr ' ' '\n'`
-    COMPREPLY=($(compgen -W "${host_list}" -- $cur))
-    return 0
-}
-complete -F _complete_hosts host ssh nslookup ssh-copy-id
-
-_pipenv_completion() {
-    local IFS=$'\t'
-    COMPREPLY=( $( env COMP_WORDS="${COMP_WORDS[*]}" \
-                   COMP_CWORD=$COMP_CWORD \
-                   _PIPENV_COMPLETE=complete-bash $1 ) )
-    return 0
-}
-
-complete -F _pipenv_completion -o default pipenv
-
 # Silence warning about using bash on macOS.
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
