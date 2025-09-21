@@ -13,7 +13,7 @@ alias grep='grep --exclude-dir .git --exclude-dir env'
 alias gg='git grep'
 alias synctovm="rsync -a --stats --exclude env --exclude '*.pyc' --delete ~liam/Documents/ liam@vm.liammonahan.com:~liam/Documents/"
 alias vm='ssh vm.liammonahan.com'
-alias prunemergedbranches='MAINBR=$(git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@") && git checkout $MAINBR && git pull && git branch --merged | egrep -v "(^\*|$MAINBR)" | xargs git branch -d 2> /dev/null; git fetch --prune'
+alias prunemergedbranches='git checkout master && git pull && git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d 2> /dev/null; git fetch --prune'
 alias obliquestrat='shuf -n 1 $HOME/usr/etc/obliquestrat/terms.txt'
 alias til='cd ~/code/til && git status && echo && ls'
 
