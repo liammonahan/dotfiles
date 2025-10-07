@@ -1,6 +1,4 @@
 
-echo "howdy from bash_profile"
-
 # set non-exported variables
 NEW_HOSTNAME=`hostname -s`
 PROMPT_COMMAND='CurDir=`pwd|sed -E "s!$HOME!~!"|sed -E -e "s!([^/])[^/]+/!\1/!g"`'
