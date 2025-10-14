@@ -98,13 +98,3 @@ recentlinks () {
     ssh root@link.monahan.io "tail -5 /var/www/links.txt"
 }
 
-# sed find and replace
-# shamelessly taken from https://github.com/zackmdavis/dotfiles/
-replace () {
-    if [[ -z "$1" ]] || [[ -z "$2" ]]; then
-        echo "for non-disastrous results, this function needs two arguments"
-        return 2
-    fi
-    find . -type f -not -path "./.git/*" -print0 | xargs -0 sed -i -e "s%$1%$2%g"
-}
-
