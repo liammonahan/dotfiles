@@ -15,6 +15,7 @@ pathadd() {
 pathadd "$HOME/.dotfiles/bin"
 pathadd "$HOME/.local/bin"
 pathadd "$HOME/usr/bin"
+pathadd "/opt/homebrew/opt/libpq/bin"
 
 # programming language local bin directories (if present)
 pathadd "$HOME/.cargo/bin"
